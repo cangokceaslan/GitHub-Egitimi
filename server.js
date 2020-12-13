@@ -5,7 +5,7 @@ const express = require('express');
 var port = 3000;
 var app = express();
 var wikiUrls1 = "";
-// alsşdfşösdşlföşlsdfö şlö
+var can;
 rp(url)
   .then(function (html) {
     //success!
@@ -13,6 +13,7 @@ rp(url)
     for (let i = 0; i < $('#menu-menu-1 > li > a', html).length; i++) {
       wikiUrls.push($('#menu-menu-1 > li > a', html)[i].attribs.href.toString());
     }
+    can = 3;
     var sf_wikiUrls = "";
     sf_wikiUrls = wikiUrls.toString()
     console.log(sf_wikiUrls);
