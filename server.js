@@ -5,11 +5,12 @@ const express = require('express');
 var port = 3000;
 var app = express();
 var wikiUrls1 = "";
+// cangokceaslan Branch'ine aittir
 rp(url)
-  .then(function(html){
+  .then(function (html) {
     //success!
     var wikiUrls = [];
-    for (let i = 0; i < $('#menu-menu-1 > li > a', html).length ; i++) {
+    for (let i = 0; i < $('#menu-menu-1 > li > a', html).length; i++) {
       wikiUrls.push($('#menu-menu-1 > li > a', html)[i].attribs.href.toString());
     }
     var sf_wikiUrls = "";
@@ -17,13 +18,13 @@ rp(url)
     console.log(sf_wikiUrls);
     wikiUrls1 = wikiUrls;
   })
-  .catch(function(err){
+  .catch(function (err) {
     //handle error
   });
-app.get('/',(req,res)=>{
+app.get('/', (req, res) => {
   res.type('json');
-  var json = {values:wikiUrls1};
+  var json = { values: wikiUrls1 };
   values = JSON.stringify(json);
   res.send(values);
 });
-app.listen(port,()=>{console.log("Listening the 3000. port")});
+app.listen(port, () => { console.log("Listening the 3000. port") });
