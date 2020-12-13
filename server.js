@@ -6,6 +6,7 @@ var port = 3000;
 var app = express();
 var wikiUrls1 = "";
 var conflictVar = "Can 123546";
+var cangokceaslan = "Can Gökçeaslan 12345";
 rp(url)
   .then(function (html) {
     //success!
